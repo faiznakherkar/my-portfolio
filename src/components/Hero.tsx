@@ -128,7 +128,7 @@ const Hero = () => {
             {[
               { href: "https://github.com/faiznakherkar", icon: Github },
               { href: "https://www.linkedin.com/in/faiz-nakherkar-07b132283/", icon: Linkedin },
-              { href: "mailto:faiznakherkar50@example.com", icon: Mail }
+              { href: "mailto:faiznakherkar50@.com", icon: Mail }
             ].map(({ href, icon: Icon }, index) => (
               <motion.a
                 key={href}
