@@ -64,7 +64,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Hi, I'm{" "}
-            <span className="gradient-text">Alex Thompson</span>
+            <span className="gradient-text">Faiz Nakherkar</span>
           </motion.h1>
           
           <motion.div 
@@ -126,9 +126,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.1 }}
           >
             {[
-              { href: "https://github.com", icon: Github },
-              { href: "https://linkedin.com", icon: Linkedin },
-              { href: "mailto:alex@example.com", icon: Mail }
+              { href: "https://github.com/faiznakherkar", icon: Github },
+              { href: "https://www.linkedin.com/in/faiz-nakherkar-07b132283/", icon: Linkedin },
+              { href: "mailto:faiznakherkar50@example.com", icon: Mail }
             ].map(({ href, icon: Icon }, index) => (
               <motion.a
                 key={href}
