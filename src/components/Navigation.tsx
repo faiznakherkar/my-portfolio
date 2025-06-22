@@ -41,7 +41,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto section-padding">
         <div className="flex items-center justify-between h-16">
           <div className="text-xl font-bold gradient-text">
-            Alex Thompson
+            Faiz Nakherkar
           </div>
 
           {/* Desktop Navigation */}
