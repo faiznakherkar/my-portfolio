@@ -7,6 +7,9 @@ import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
+import AnimatedCursor from "@/components/AnimatedCursor";
+import ParticleBackground from "@/components/ParticleBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -34,15 +37,29 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
+      <AnimatedCursor />
+      <ParticleBackground />
       <Navigation />
       <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Blog />
-      <Contact />
+      <ScrollReveal>
+        <About />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Projects />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Skills />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Experience />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Blog />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Contact />
+      </ScrollReveal>
     </div>
   );
 };

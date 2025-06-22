@@ -1,8 +1,19 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import ScrollReveal from "./ScrollReveal";
 
 const Experience = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const timelineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   const experiences = [
     {
       period: "2022 - Present",
@@ -63,71 +74,148 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20" ref={containerRef}>
       <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Professional Journey
-          </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Building innovative solutions and growing expertise across diverse technical challenges
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              Professional Journey
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Building innovative solutions and growing expertise across diverse technical challenges
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-purple-400"></div>
+          {/* Animated Timeline line */}
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-slate-600">
+            <motion.div
+              className="w-full bg-gradient-to-b from-blue-400 to-purple-400 origin-top"
+              style={{ height: timelineHeight }}
+            />
+          </div>
 
           {experiences.map((exp, index) => (
-            <div key={index} className={`relative flex items-center mb-12 ${
-              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-            }`}>
-              {/* Timeline dot */}
-              <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-slate-900 animate-glow"></div>
+            <motion.div 
+              key={index} 
+              className={`relative flex items-center mb-12 ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              }`}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+            >
+              {/* Animated Timeline dot */}
+              <motion.div 
+                className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-slate-900 z-10"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.2 + 0.3 }}
+                whileHover={{ scale: 1.5 }}
+              />
 
               {/* Content */}
               <div className={`w-full md:w-1/2 ml-12 md:ml-0 ${
                 index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
               }`}>
-                <Card className="glass-card p-6 hover:scale-105 transition-all duration-300">
-                  <div className="mb-4">
-                    <Badge variant="outline" className="border-blue-400 text-blue-400 mb-2">
-                      {exp.period}
-                    </Badge>
-                    <h3 className="text-xl font-semibold text-slate-100 mb-1">
-                      {exp.title}
-                    </h3>
-                    <div className="text-blue-400 font-medium">
-                      {exp.company} • {exp.location}
-                    </div>
-                  </div>
-
-                  <p className="text-slate-300 text-sm mb-4 leading-relaxed">
-                    {exp.description}
-                  </p>
-
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-slate-200 mb-2">Key Achievements:</h4>
-                    <ul className="space-y-1">
-                      {exp.achievements.map((achievement, achievementIndex) => (
-                        <li key={achievementIndex} className="text-slate-300 text-sm flex items-start gap-2">
-                          <span className="text-blue-400 text-xs mt-1">▶</span>
-                          {achievement}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="bg-slate-700 text-slate-300 text-xs">
-                        {tech}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Card className="glass-card p-6">
+                    <motion.div 
+                      className="mb-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
+                    >
+                      <Badge variant="outline" className="border-blue-400 text-blue-400 mb-2">
+                        {exp.period}
                       </Badge>
-                    ))}
-                  </div>
-                </Card>
+                      <h3 className="text-xl font-semibold text-slate-100 mb-1">
+                        {exp.title}
+                      </h3>
+                      <div className="text-blue-400 font-medium">
+                        {exp.company} • {exp.location}
+                      </div>
+                    </motion.div>
+
+                    <motion.p 
+                      className="text-slate-300 text-sm mb-4 leading-relaxed"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.2 + 0.2 }}
+                    >
+                      {exp.description}
+                    </motion.p>
+
+                    <motion.div 
+                      className="mb-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+                    >
+                      <h4 className="text-sm font-semibold text-slate-200 mb-2">Key Achievements:</h4>
+                      <ul className="space-y-1">
+                        {exp.achievements.map((achievement, achievementIndex) => (
+                          <motion.li 
+                            key={achievementIndex} 
+                            className="text-slate-300 text-sm flex items-start gap-2"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ 
+                              duration: 0.3, 
+                              delay: index * 0.2 + 0.4 + achievementIndex * 0.1 
+                            }}
+                          >
+                            <motion.span 
+                              className="text-blue-400 text-xs mt-1"
+                              whileHover={{ scale: 1.2 }}
+                            >
+                              ▶
+                            </motion.span>
+                            {achievement}
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </motion.div>
+
+                    <motion.div 
+                      className="flex flex-wrap gap-2"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+                    >
+                      {exp.technologies.map((tech, techIndex) => (
+                        <motion.div
+                          key={tech}
+                          initial={{ opacity: 0, scale: 0 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ 
+                            duration: 0.2, 
+                            delay: index * 0.2 + 0.6 + techIndex * 0.05 
+                          }}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          <Badge variant="secondary" className="bg-slate-700 text-slate-300 text-xs">
+                            {tech}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </Card>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,12 +1,14 @@
-
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects = [
     {
@@ -74,87 +76,160 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto section-padding">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            A showcase of innovative solutions and technical achievements
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              Featured Projects
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              A showcase of innovative solutions and technical achievements
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {filters.map((filter) => (
-            <Button
-              key={filter}
-              variant={activeFilter === filter ? "default" : "outline"}
-              onClick={() => setActiveFilter(filter)}
-              className={`transition-all duration-200 ${
-                activeFilter === filter
-                  ? "bg-blue-600 hover:bg-blue-700 text-white"
-                  : "border-slate-600 text-slate-300 hover:bg-slate-800"
-              }`}
-            >
-              {filter}
-            </Button>
-          ))}
-        </div>
+        <ScrollReveal delay={0.2}>
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {filters.map((filter, index) => (
+              <motion.div
+                key={filter}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  variant={activeFilter === filter ? "default" : "outline"}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`transition-all duration-200 ${
+                    activeFilter === filter
+                      ? "bg-blue-600 hover:bg-blue-700 text-white"
+                      : "border-slate-600 text-slate-300 hover:bg-slate-800"
+                  }`}
+                >
+                  {filter}
+                </Button>
+              </motion.div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Card key={index} className="glass-card overflow-hidden group hover:scale-105 transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-slate-100 group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-slate-300 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="bg-slate-700 text-slate-300 text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors text-sm"
-                  >
-                    <Github className="w-4 h-4" />
-                    Code
-                  </a>
+          <AnimatePresence mode="wait">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={`${activeFilter}-${index}`}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                onHoverStart={() => setHoveredProject(index)}
+                onHoverEnd={() => setHoveredProject(null)}
+              >
+                <Card className="glass-card overflow-hidden group relative">
+                  <div className="relative overflow-hidden">
+                    <motion.img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: hoveredProject === index ? 1 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                    
+                    {/* Tech stack overlay */}
+                    <AnimatePresence>
+                      {hoveredProject === index && (
+                        <motion.div
+                          className="absolute inset-0 flex items-center justify-center"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 20 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <div className="text-center">
+                            <p className="text-white font-semibold mb-2">Tech Stack</p>
+                            <div className="flex flex-wrap justify-center gap-1">
+                              {project.technologies.map((tech) => (
+                                <Badge key={tech} variant="secondary" className="bg-blue-600 text-white text-xs">
+                                  {tech}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                   
-                  <a 
-                    href={project.demo} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                  <motion.div 
+                    className="p-6"
+                    animate={{ 
+                      backgroundColor: hoveredProject === index ? "rgba(59, 130, 246, 0.05)" : "transparent" 
+                    }}
+                    transition={{ duration: 0.3 }}
                   >
-                    Live Demo
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </Card>
-          ))}
+                    <motion.h3 
+                      className="text-xl font-semibold mb-3 text-slate-100 transition-colors"
+                      animate={{ 
+                        color: hoveredProject === index ? "#60a5fa" : "#f1f5f9" 
+                      }}
+                    >
+                      {project.title}
+                    </motion.h3>
+                    
+                    <p className="text-slate-300 text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="bg-slate-700 text-slate-300 text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <motion.a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors text-sm"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </motion.a>
+                      
+                      <motion.a 
+                        href={project.demo} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                        whileHover={{ scale: 1.05, x: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        Live Demo
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.a>
+                    </div>
+                  </motion.div>
+                </Card>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>

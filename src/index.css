@@ -54,10 +54,23 @@
 
   body {
     @apply bg-background text-foreground font-inter;
+    cursor: none; /* Hide default cursor on desktop */
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Show default cursor on mobile/touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      cursor: auto;
+    }
+    
+    /* Hide custom cursor on mobile */
+    .custom-cursor {
+      display: none !important;
+    }
   }
 }
 
@@ -91,4 +104,22 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(37, 99, 235);
+}
+
+/* Performance optimizations */
+* {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Smooth animations for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
