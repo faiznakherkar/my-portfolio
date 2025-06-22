@@ -145,8 +145,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-slate-200">Email</h4>
-                    <a href="mailto:alex@example.com" className="text-slate-400 hover:text-blue-400 transition-colors">
-                      alex@example.com
+                    <a href="mailto:faiznakherkar@gmail.com" className="text-slate-400 hover:text-blue-400 transition-colors">
+                      faiznakherkar50@gmail.com
                     </a>
                   </div>
                 </div>
@@ -158,12 +158,12 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium text-slate-200">GitHub</h4>
                     <a 
-                      href="https://github.com" 
+                      href="https://github.com/faiznakherkar" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-slate-400 hover:text-blue-400 transition-colors"
                     >
-                      @alexthompson
+                      @Faiznakherkar
                     </a>
                   </div>
                 </div>
@@ -175,12 +175,12 @@ const Contact = () => {
                   <div>
                     <h4 className="font-medium text-slate-200">LinkedIn</h4>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/faiz-nakherkar-07b132283/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-slate-400 hover:text-blue-400 transition-colors"
                     >
-                      /in/alexthompson
+                      /in/Faiznakherkar
                     </a>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ const Contact = () => {
               </p>
               <div className="text-sm text-slate-400">
                 <p>⏰ Typical response time: 24 hours</p>
-                <p>🌍 Based in: San Francisco, CA (PST)</p>
+                <p>🌍 Based in: Mumbai , India</p>
               </div>
             </Card>
           </div>
