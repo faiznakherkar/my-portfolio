@@ -26,9 +26,9 @@ const About = () => {
             <Card className="glass-card p-8">
               <h3 className="text-2xl font-semibold mb-4 text-blue-400">My Journey</h3>
               <p className="text-slate-300 leading-relaxed mb-4">
-                With over 5 years of experience in full-stack development, I've had the privilege of working 
-                with startups and established companies to build scalable, user-centric applications that 
-                make a real impact.
+               Over 4 years of engineering background,, I've worked on variety of academics and real-world
+                projects that span full-stack web development, machine learning and cloud technologies. My focus 
+                has been on building scalable, intuitive applications that solve meaningful problems. 
               </p>
               <p className="text-slate-300 leading-relaxed mb-4">
                 My expertise spans modern web technologies, cloud architecture, and AI integrations. 
