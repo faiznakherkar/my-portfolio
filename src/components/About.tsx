@@ -86,8 +86,9 @@ const About = () => {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <h5 className="font-medium text-slate-200">Problem Solving</h5>
-                    <p className="text-sm text-slate-400">Transforming complex challenges into elegant solutions</p>
+                    <h5 className="font-medium text-slate-200">Collaboration & Communication</h5>
+                    <p className="text-sm text-slate-400">Contributing in team-based projects and hackathons with a focus 
+                    on code, version control, and problem-solving in group settings.</p>
                   </div>
                 </div>
               </div>
