@@ -31,9 +31,9 @@ const About = () => {
                 has been on building scalable, intuitive applications that solve meaningful problems. 
               </p>
               <p className="text-slate-300 leading-relaxed mb-4">
-                My expertise spans modern web technologies, cloud architecture, and AI integrations. 
-                I'm particularly passionate about creating solutions that not only meet technical requirements 
-                but also provide exceptional user experiences.
+                MY expertise includes modern web technologies, cloud architecture, and AI integrations. I'm 
+                particularly passionate about creating solutoins that not only meet technical requirements but
+                also offer exceptional user experiences.
               </p>
               <p className="text-slate-300 leading-relaxed">
                 When I'm not coding, you'll find me contributing to open-source projects, writing technical 
