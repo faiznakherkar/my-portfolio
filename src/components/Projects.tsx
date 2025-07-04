@@ -66,8 +66,8 @@ const Projects = () => {
       demo: "https://demo.com"
     }
   ];
-  // Removing the projects filters
-  // const filters = ["All", "Full-Stack", "Frontend", "Backend", "AI", "IoT", "Blockchain"];
+
+   const filters = ["All", "Full-Stack", "Frontend", "Backend", "AI", "IoT", "Blockchain"];
 
   const filteredProjects = activeFilter === "All" 
     ? projects 
