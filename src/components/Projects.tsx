@@ -66,14 +66,14 @@ const Projects = () => {
       demo: "https://demo.com"
     }
   ];
-
+  /*
    const filters = ["All", "Full-Stack", "Frontend", "Backend", "AI", "IoT", "Blockchain"];
 
   const filteredProjects = activeFilter === "All" 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
-  return (
+  return */ (
     <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto section-padding">
         <ScrollReveal>
