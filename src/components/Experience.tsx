@@ -1,7 +1,7 @@
 
 
-                        // {exp.achievements.map((ac
-import { Card } from "@/components/ui/card";
+// {exp.achievements.map((ac
+import { Card } from "@/components/ui/card"; 
 import { Badge } from "@/components/ui/badge";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -164,7 +164,7 @@ const Experience = () => {
                       transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                     >
                       <h4 className="text-sm font-semibold text-slate-200 mb-2">Key Achievements:</h4>
-                      <ul className="space-y-1">hievement, achievementIndex) => (
+                      <ul className="space-y-1">{exp.achievements.map((achievement, achievementIndex) => (
                           <motion.li 
                             key={achievementIndex} 
                             className="text-slate-300 text-sm flex items-start gap-2"
