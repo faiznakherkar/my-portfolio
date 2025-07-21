@@ -1,6 +1,7 @@
 
 
-                        {exp.achievements.map((acimport { Card } from "@/components/ui/card";
+                        // {exp.achievements.map((ac
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
