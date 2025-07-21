@@ -61,7 +61,7 @@ const Projects = () => {
       description: "Custom-built e-commerce platform featuring product catalog, account management, shopping cart, and seamless checkout experience.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
       technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
-      category: "FULL-Stack",
+      category: "Full-stack",
       // github: "https://github.com",
       // demo: "https://demo.com"
     }
