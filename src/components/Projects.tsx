@@ -57,13 +57,13 @@ const Projects = () => {
       demo: "https://demo.com"
     },
     {
-      title: "Blockchain Voting Platform",
-      description: "Secure, transparent voting system using blockchain technology with identity verification and real-time result tracking.",
+      title: "E-Commerce Website",
+      description: "Custom-built e-commerce platform featuring product catalog, user authentication, shopping cart, and seamless checkout experience.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      technologies: ["Solidity", "React", "Web3.js", "Ethereum"],
-      category: "Blockchain",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
+      category: "FULL-Stack",
+      // github: "https://github.com",
+      // demo: "https://demo.com"
     }
   ];
   
