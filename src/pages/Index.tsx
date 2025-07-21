@@ -5,7 +5,6 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
-import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import ParticleBackground from "@/components/ParticleBackground";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -51,9 +50,6 @@ const Index = () => {
       </ScrollReveal>
       <ScrollReveal>
         <Experience />
-      </ScrollReveal>
-      <ScrollReveal>
-        <Blog />
       </ScrollReveal>
       <ScrollReveal>
         <Contact />
