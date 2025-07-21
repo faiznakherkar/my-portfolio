@@ -48,17 +48,17 @@ const Projects = () => {
       demo: "https://demo.com"
     },
     {
-      title: "Smart IoT Home System",
-      description: "Complete home automation solution with mobile app, voice control integration, and machine learning-based usage optimization.",
+      title: "Food Corner Website",
+      description: Responsive food ordering platform with dynamic menu, customer reviews, and shopping cart to streamline the food ordering experience.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-      technologies: ["React Native", "Python", "TensorFlow", "AWS"],
-      category: "IoT",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
+      category: "Full-Stack",
+      // github: "https://github.com",
+      // demo: "https://demo.com"
     },
     {
       title: "E-Commerce Website",
-      description: "Custom-built e-commerce platform featuring product catalog, user authentication, shopping cart, and seamless checkout experience.",
+      description: "Custom-built e-commerce platform featuring product catalog, account management, shopping cart, and seamless checkout experience.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
       technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
       category: "FULL-Stack",
