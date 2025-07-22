@@ -39,7 +39,7 @@ const Projects = () => {
       demo: "https://demo.com"
     },
     {
-      title: "MicroservicesArchitecture",
+      title: "Microservices Architecture",
       description: "Scalable backend system with containerized microservices, API gateway, service mesh, and comprehensive monitoring.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
       technologies: ["Node.js", "Docker", "Kubernetes", "GraphQL"],
