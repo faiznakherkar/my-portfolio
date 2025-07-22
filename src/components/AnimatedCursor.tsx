@@ -23,9 +23,9 @@ const AnimatedCursor = () => {
 
     // Function to add hover listeners to all interactive elements
     const addHoverListeners = () => {
-      // More comprehensive selector for interactive elements
+      // More comprehensive selector for interactive elements including motion components
       const interactiveElements = document.querySelectorAll(
-        "a, button, [role='button'], .cursor-pointer, input[type='button'], input[type='submit'], [tabindex='0'], .hover\\:scale-105, .hover\\:scale-110, .hover\\:scale-\\[1\\.02\\]"
+        "a, button, [role='button'], .cursor-pointer, input[type='button'], input[type='submit'], [tabindex='0'], .hover\\:scale-105, .hover\\:scale-110, .hover\\:scale-\\[1\\.02\\], [data-framer-component-type], .glass-card, .group, [class*='motion'], [class*='hover:'], [class*='transition'], .badge, .card"
       );
       
       console.log(`Found ${interactiveElements.length} interactive elements`);
@@ -58,8 +58,8 @@ const AnimatedCursor = () => {
             if (node.nodeType === Node.ELEMENT_NODE) {
               const element = node as Element;
               // Check if the added node or its children contain interactive elements
-              if (element.matches("a, button, [role='button'], .cursor-pointer") || 
-                  element.querySelector("a, button, [role='button'], .cursor-pointer")) {
+              if (element.matches("a, button, [role='button'], .cursor-pointer, .glass-card, .group, [class*='hover:'], [class*='transition']") || 
+                  element.querySelector("a, button, [role='button'], .cursor-pointer, .glass-card, .group, [class*='hover:'], [class*='transition']")) {
                 shouldUpdate = true;
               }
             }
