@@ -118,7 +118,8 @@ const AnimatedCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-6 h-6 bg-blue-400/30 rounded-full pointer-events-none z-50 mix-blend-difference custom-cursor"
+        className="fixed top-0 left-0 w-6 h-6 border-2 border-white rounded-full pointer-events-none z-[9999] custom-cursor"
+        style={{ backdropFilter: 'invert(1)' }}
         animate={{
           x: mousePosition.x - 12,
           y: mousePosition.y - 12,
@@ -132,10 +133,10 @@ const AnimatedCursor = () => {
         }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-1 h-1 bg-blue-400 rounded-full pointer-events-none z-50 custom-cursor"
+        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] custom-cursor"
         animate={{
-          x: mousePosition.x - 2,
-          y: mousePosition.y - 2,
+          x: mousePosition.x - 4,
+          y: mousePosition.y - 4,
         }}
         transition={{
           type: "spring",
