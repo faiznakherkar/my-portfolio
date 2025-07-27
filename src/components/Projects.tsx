@@ -50,7 +50,7 @@ const Projects = () => {
     {
       title: "Food Corner Website",
       description: "Responsive food ordering platform with dynamic menu, customer reviews, and shopping cart to streamline the food ordering experience.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
+      image: "/images/food-corner-image.jpg",
       technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
       category: "Full-Stack",
       // github: "https://github.com",
@@ -59,7 +59,7 @@ const Projects = () => {
     {
       title: "E-Commerce Website",
       description: "Custom-built e-commerce platform featuring product catalog, account management, shopping cart, and seamless checkout experience.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      image: "/images/e-commerce-project-image.jpg",
       technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
       category: "Full-Stack",
       // github: "https://github.com",
