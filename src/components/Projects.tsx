@@ -22,7 +22,7 @@ const Projects = () => {
     },
     {
       title: "SmartCity Vista",
-      description: "A digital civic platform connecting citizens with local authorities for location-based issue reporting, real-time updates, community voting, and an admin dashboard to efficiently track and resolve public concerns.",
+      description: "A civic platform forlocation-based issue reporting, real-time updates, community voting, and an admin dashboard for efficient issue resolution.",
       image: "/images/smartcity-vista-image.png",
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB","Tailwind CSS"],
       category: "AI",
