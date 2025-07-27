@@ -12,7 +12,7 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Foodie Hands",
       description: "A web platform that connects food donors with NGOs and volunteers, enabling real-time pickup requests, location tracking, and smart waste management.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB","Tailwind CSS"],
