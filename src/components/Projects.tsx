@@ -13,12 +13,12 @@ const Projects = () => {
   const projects = [
     {
       title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with AI-powered recommendations, real-time inventory management, and integrated payment processing.",
+      description: "A web platform that connects food donors with NGOs and volunteers, enabling real-time pickup requests, location tracking, and smart waste management.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB","Tailwind CSS"],
       category: "Full-Stack",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      github: "https://github.com/faiznakherkar/Foodie-Hands",
+      demo: "https://foodie-hands.vercel.app/"
     },
     {
       title: "AI Content Generator",
