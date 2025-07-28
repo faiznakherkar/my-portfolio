@@ -345,11 +345,11 @@ const Projects = () => {
                 <Button
                   variant={activeFilter === filter ? "default" : "outline"}
                   onClick={() => setActiveFilter(filter)}
-                  className={transition-all duration-200 ${
+                  className={`transition-all duration-200 ${
                     activeFilter === filter
                       ? "bg-blue-600 hover:bg-blue-700 text-white"
                       : "border-slate-600 text-slate-300 hover:bg-slate-800"
-                  }}
+                  }`}
                 >
                   {filter}
                 </Button>
@@ -363,7 +363,7 @@ const Projects = () => {
           <AnimatePresence mode="wait">
             {filteredProjects.map((project, index) => (
               <motion.div
-                key={${activeFilter}-${index}}
+                key={`${activeFilter}-${index}`}
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
