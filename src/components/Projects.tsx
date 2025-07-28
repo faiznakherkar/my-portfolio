@@ -31,7 +31,7 @@ const Projects = () => {
     },
     {
       title: "DrowsiScan",
-      description: "Developed a real-time driver drowsiness detection system using CNN and Eye Aspect Ratio (EAR). Utilized YOLO and Haar Cascade for face/eye detection with alerts for eye closure and yawning.",
+      description: "Developed a real-time driver drowsiness detection system using CNN and Eye Aspect Ratio (EAR). Used YOLO and Haar Cascade for face and eye detection, with alert triggers for prolonged eye closure and yawning. ",
       image: "/images/drowsiscan-project.jpeg",
       technologies: ["Python","OpenCV","TensorFlow","Flask"],
       category: "Frontend",
