@@ -42,7 +42,7 @@ const Projects = () => {
       title: "Egg Catcher Game",
       description: "A fun web-based game where players control a catcher to collect falling eggs, avoiding misses. The game speeds up as the player progresses.",
       image: "/images/egg-catcher-game.jpg",
-      technologies: ["Node.js", "Docker", "Kubernetes", "GraphQL"],
+      technologies: ["HTML","CSS","Javascript"],
       category: "Frontend",
       // github: "https://github.com",
       // demo: "https://demo.com"
@@ -51,7 +51,7 @@ const Projects = () => {
       title: "Food Corner Website",
       description: "Responsive food ordering platform with dynamic menu, customer reviews, and shopping cart to streamline the food ordering experience.",
       image: "/images/food-corner-image.jpg",
-      technologies: ["HTML", "CSS", "Javascript"],
+      technologies: ["HTML", "CSS", "PHP","Bootstrap","MySQL"],
       category: "Full-Stack",
       // github: "https://github.com",
       // demo: "https://demo.com"
