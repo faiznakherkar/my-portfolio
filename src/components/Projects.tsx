@@ -30,13 +30,13 @@ const Projects = () => {
       demo: "https://smartcity-vista.vercel.app/"
     },
     {
-      title: "Real-time Analytics Dashboard",
-      description: "Interactive dashboard for monitoring business metrics with live data visualization, custom alerts, and predictive analytics.",
+      title: "DrowsiScan",
+      description: "Developed a real-time driver drowsiness detection system using CNN and Eye Aspect Ratio (EAR). Utilized YOLO and Haar Cascade for face/eye detection with alerts for eye closure and yawning.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      technologies: ["React", "D3.js", "WebSocket", "PostgreSQL"],
+      technologies: ["Python","OpenCV","TensorFlow","Flask"],
       category: "Frontend",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      // github: "https://github.com",
+      // demo: "https://demo.com"
     },
     {
       title: "Egg Catcher Game",
