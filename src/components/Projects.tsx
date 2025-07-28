@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
+  // const [activeFilter, setActiveFilter] = useState("All");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects = [
@@ -67,11 +67,11 @@ const Projects = () => {
     }
   ];
   
-   const filters = ["All", "Full-Stack", "Frontend", "Backend", "AI", "IoT", "Blockchain"];
+   // const filters = ["All", "Full-Stack", "Frontend", "Backend", "AI", "IoT", "Blockchain"];
 
-  const filteredProjects = activeFilter === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  // const filteredProjects = activeFilter === "All" 
+  //   ? projects 
+  //   : projects.filter(project => project.category === activeFilter);
 
   return  (
     <section id="projects" className="py-20">
@@ -88,7 +88,7 @@ const Projects = () => {
         </ScrollReveal>
 
         {/* Filter Buttons */}
-        <ScrollReveal delay={0.2}>
+{/*         <ScrollReveal delay={0.2}>
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {filters.map((filter, index) => (
               <motion.div
@@ -114,14 +114,15 @@ const Projects = () => {
               </motion.div>
             ))}
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="wait">
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <motion.div
-                key={`${activeFilter}-${index}`}
+{/*                 key={`${activeFilter}-${index}`} */}
+                key={project.title}
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
