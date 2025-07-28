@@ -32,7 +32,7 @@ const Projects = () => {
     {
       title: "DrowsiScan",
       description: "Developed a real-time driver drowsiness detection system using CNN and Eye Aspect Ratio (EAR). Utilized YOLO and Haar Cascade for face/eye detection with alerts for eye closure and yawning.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      image: "/images/drowsiscan-project.jpeg",
       technologies: ["Python","OpenCV","TensorFlow","Flask"],
       category: "Frontend",
       // github: "https://github.com",
