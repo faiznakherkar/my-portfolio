@@ -40,12 +40,12 @@ const Projects = () => {
     },
     {
       title: "Egg Catcher Game",
-      description: "An engaging web-based game where players control a catcher to collect falling eggs. The goal is to catch as many eggs as possible while avoiding misses, with increasing speed and difficulty as the game progresses.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
+      description: "A fun web-based game where players control a catcher to collect falling eggs, avoiding misses. The game speeds up as the player progresses.",
+      image: "/images/egg-catcher-game.jpg",
       technologies: ["Node.js", "Docker", "Kubernetes", "GraphQL"],
-      category: "Backend",
-      github: "https://github.com",
-      demo: "https://demo.com"
+      category: "Frontend",
+      // github: "https://github.com",
+      // demo: "https://demo.com"
     },
     {
       title: "Food Corner Website",
