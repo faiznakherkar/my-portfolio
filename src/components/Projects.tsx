@@ -51,7 +51,7 @@ const Projects = () => {
       title: "Food Corner Website",
       description: "Responsive food ordering platform with dynamic menu, customer reviews, and shopping cart to streamline the food ordering experience.",
       image: "/images/food-corner-image.jpg",
-      technologies: ["HTML", "CSS", "PHP", "Bootstrap","MySQL"],
+      technologies: ["HTML", "CSS", "Javascript"],
       category: "Full-Stack",
       // github: "https://github.com",
       // demo: "https://demo.com"
