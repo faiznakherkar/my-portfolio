@@ -105,20 +105,20 @@ const downloadCV = () => {
               <h4 className="text-lg font-semibold mb-4 text-blue-400">Quick Stats</h4>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">50+</div>
+                  <div className="text-2xl font-bold text-blue-400">6+</div>
                   <div className="text-sm text-slate-400">Projects Completed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">5+</div>
-                  <div className="text-sm text-slate-400">Years Experience</div>
+                  <div className="text-2xl font-bold text-blue-400">1+</div>
+                  <div className="text-sm text-slate-400">Years of Focused Learning</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">15+</div>
-                  <div className="text-sm text-slate-400">Technologies</div>
+                  <div className="text-2xl font-bold text-blue-400">10+</div>
+                  <div className="text-sm text-slate-400">Technologies Explored</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-blue-400">100%</div>
-                  <div className="text-sm text-slate-400">Client Satisfaction</div>
+                  <div className="text-sm text-slate-400">Passion for problem solving</div>
                 </div>
               </div>
             </Card>
