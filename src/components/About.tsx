@@ -3,11 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const About = () => {
-  const downloadCV = () => {
-    // In a real application, this would trigger a file download
-    console.log("Downloading CV...");
-    alert("CV download functionality would be implemented here!");
-  };
+  // const downloadCV = () => {
+  //   // In a real application, this would trigger a file download
+  //   console.log("Downloading CV...");
+  //   alert("CV download functionality would be implemented here!");
+  // };                                                                Adding functionality to implement the downloadCV functionality 
+
+const downloadCV = () => {
+  const link = document.createElement("a");
+  link.href = "/Faiz-Nakherkar-CV.pdf";
+  link.download = "Faiz-Nakherkar-CV.pdf";
+  link.click();
+};
 
   return (
     <section id="about" className="py-20 bg-slate-800/30">
