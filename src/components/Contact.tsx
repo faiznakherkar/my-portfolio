@@ -24,21 +24,7 @@ const Contact = () => {
     });
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {            
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-
-  //   // Simulate form submission
-  //   setTimeout(() => {
-  //     toast({
-  //       title: "Message Sent!",
-  //       description: "Thank you for reaching out. I'll get back to you soon!",
-  //     });
-  //     setFormData({ name: "", email: "", subject: "", message: "" });
-  //     setIsSubmitting(false);
-  //   }, 2000);
-  // };                adding the functionality of sending msg
-
+    // adding the functionality of sending msg
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
