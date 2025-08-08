@@ -3,11 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const About = () => {
-  // const downloadCV = () => {
-  //   // In a real application, this would trigger a file download
-  //   console.log("Downloading CV...");
-  //   alert("CV download functionality would be implemented here!");
-  // };                                                                Adding functionality to implement the downloadCV functionality 
+  {/*Adding functionality to implement the downloadCV functionality*/} 
 
 const downloadCV = () => {
   const link = document.createElement("a");
