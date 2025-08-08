@@ -69,15 +69,12 @@ const Projects = () => {
   
    const filters = ["All", "Full-Stack", "Frontend", "Backend", "AI", "IoT", "Blockchain"];
 
-  // const filteredProjects = activeFilter === "All" 
-  //   ? projects 
-  //   : projects.filter(project => project.category === activeFilter);
   const filteredProjects = activeFilter === "All"
   ? projects
   : projects.filter(project => 
       Array.isArray(project.category)
         ? project.category.includes(activeFilter)
-        : project.category === activeFilter);  // making changes to check if it supports multiple categories.
+        : project.category === activeFilter); 
 
   return  (
     <section id="projects" className="py-20">
