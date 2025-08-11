@@ -117,7 +117,7 @@ const downloadCV = () => {
                   <div className="text-sm text-slate-400">Passion for problem solving</div>
                 </div>
               </div>
-            </Card>
+            </Card>   
           </div>
         </div>
       </div>
