@@ -34,8 +34,8 @@ const downloadCV = () => {
                 has been on building scalable, intuitive applications that solve meaningful problems. 
               </p>
               <p className="text-slate-300 leading-relaxed mb-4">
-                MY expertise includes modern web technologies, cloud architecture, and AI integrations. I'm 
-                particularly passionate about creating solutoins that not only meet technical requirements but
+                My expertise includes modern web technologies, cloud architecture, and AI integrations. I'm 
+                particularly passionate about creating solutions that not only meet technical requirements but
                 also offer exceptional user experiences.
               </p>
               <p className="text-slate-300 leading-relaxed">
