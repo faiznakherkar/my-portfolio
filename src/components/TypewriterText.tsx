@@ -41,7 +41,7 @@ const TypewriterText = ({ texts, className = "" }: TypewriterTextProps) => {
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-        className="inline-block w-0.5 h-6 bg-blue-400 ml-1"
+        className="inline-block w-0.5 h-6 bg-primary-400 ml-1"
       />
     </span>
   );
